@@ -4,7 +4,7 @@
 # shellcheck disable=SC2195
 
 # ========== Formating ====================================================
-# This section delclares all of the text formatting required when printing
+# This section declares all of the text formatting required when printing
 # information like color codes and linebreaks.
 
 green=$'\e[32m'
@@ -332,9 +332,9 @@ Usage:	./cbr2pdf.sh --option --option ${underline}VALUE${reset}
 	[--no-color]			Disable color output
 	[--no-list]			Disable printing file listing
 
-	This bash script convert all comic book archives with the 
+	This bash script converts all comic book archives with the 
 	file extension .cbr or .cbz recursively from a folder 
-	to PDF files in a seperate folder. It can also do single
+	to PDF files in a separate folder. It can also do single
 	files.
 
 	This script mainly uses ImageMagick to convert the images
@@ -406,8 +406,8 @@ get_file_list() {
 
 split_list() {
 
-# This function is for parallelisation
-# Parallisation is hard coded to have 4 split groups
+# This function is for parallelization.
+# Parallelization is hard coded to have 4 split groups
 # at the moment. It is preferable for the number of
 # parallelisation processes to be user set. But at the
 # moment I can't find a way to implement that function.
@@ -487,7 +487,7 @@ split_list() {
 
 get_args() {
 
-# Determing the parsed arguments
+# Determining the parsed arguments
 
 	# If no arguments are parsed, print help and exit
 	if [[ -z "$1" ]]; then	
@@ -522,7 +522,7 @@ get_args() {
 
 get_full_path() {
 
-# This function finds the absolute path from a relative one.
+# This function finds the absolute path from a relative one
 
 	if [[ -f "$1" ]]; then					# A condition to check if using single file
 		local filename="${1##*/}"			# Create a local variable for filename
@@ -807,7 +807,7 @@ check_completed() {
 
 # This function determines if the converting succeeded.
 # If it did, then add the filename to the array of completed.
-# If it didn't, then add the filename to the array of incomplete.
+# If it didn't, then add the filename to the array of incompleted.
 # This section is skipped if parallel is on.
 
 	if [[ "$parallel" != "true" ]]; then
@@ -836,7 +836,7 @@ check_completed() {
 
 parallel_process_files() {
 
-# This function sets up the parallelisation process
+# This function sets up the parallelization process
 
 	if [[ "$extract" == "true" ]]; then
 		print_log "extract" "parallel_message"
@@ -920,7 +920,7 @@ process_files() {
 
 init_process() {
 
-# This function determines if the parallelisation flag
+# This function determines if the parallelization flag
 # is on, and then selects the appropriate function.
 
 	IFS=$'\n'
